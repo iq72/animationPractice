@@ -1,0 +1,76 @@
+.container{
+  /*overflow: hidden;*/
+  position: relative;
+}
+
+.circle, .circle2, .circle3{
+  width: 120px;
+  height: 120px;
+  background: rgba(68, 184, 246, 0.53);
+  border-radius: 60px;
+  position: absolute;
+  /*margin-left: 100px;*/
+  animation-fill-mode: both;
+  /*animation-play-state: paused;*/
+}
+
+.circle{
+  animation: cross alternate 2s infinite;
+}
+
+.circle2{
+  background: rgba(218, 223, 69, 0.57);
+  animation: cross2 alternate 2s infinite;
+  animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+}
+
+/*.circle3{
+  background: rgba(203, 80, 80, 0.62);
+  animation: cross2 alternate 2s infinite;
+  animation-timing-function: linear;
+}*/
+
+.circle3{
+  /*left: 150px;*/
+  background: rgba(203, 80, 80, 0.62);
+  transform: translate3d(150px,40px,0px);
+}
+
+/*.circle3:hover{
+  background-color: rgb(8, 249, 1);
+  transform:translate3d(150px,350px,0px);
+  transition:all 2s ease-in-out;
+}*/
+
+.circle3-state-one{
+  background-color: rgb(8, 249, 1);
+  transform:translate3d(150px,350px,0px);
+  transition:all 2s ease-in-out;
+}
+
+.circle3-state-two{
+  background: rgba(203, 80, 80, 0.62);
+  transform: translate3d(150px,40px,0px);
+  transition: all 2s ease-in-out;
+}
+
+@keyframes cross{
+  from {
+    transform:translate3d(150px,40px,0px);
+    animation-timing-function: ease-in;
+  }
+  to {
+    transform: translate3d(150px,350px,0px);
+    animation-timing-function: ease-out;
+
+  }
+}
+
+@keyframes cross2{
+  from{
+      transform:translate3d(150px,40px,0px);
+  }
+  to{
+    transform:translate3d(150px,350px,0px);
+  }
+}
