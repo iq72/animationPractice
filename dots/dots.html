@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <section class="container">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <style media="screen">
+        .container{
+          position: relative;
+        }
+        .dot{
+          width: 200px;
+          height: 200px;
+          background-color: rgba(89, 162, 195, 0.65);
+          border-radius: 100px;
+          position: absolute;
+          transition-property: transform, opacity, scale;
+        }
+      </style>
+      <script type="text/javascript">
+        var dots = document.querySelectorAll('dot');
+        for(var i=0; i<dots.length; i++){
+            var dot=dots[i];
+            dot.addEventListener("transitionend",reTransition,false);
+            dot.transform(
+              translate3d(
+                          Math.random() * 100+px,
+                          Math.random() * 100+px,
+                          Math.random() * 100+px
+                        ));
+        }
+        function reTransition (e) {
+          var dot=e.target;
+          dot.scale=Math.random()*3;
+          dot.opacity=Math.random()+0.2;
+          dot.transform(
+            translate3d(
+                        Math.random() * 100+px,
+                        Math.random() * 100+px,
+                        Math.random() * 100+px
+                      ));
+        }
+      </script>
+    </section>
+  </body>
+</html>
