@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>slideInOut</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="slidable">
+          <p class="up">
+            :-)
+          </p>
+          <p class="down">
+            :-(
+          </p>
+        </div>
+      </div>
+      <style media="screen">
+        .container{
+          margin: auto;
+          width: 200px;
+          height: 200px;
+          padding: 0;
+          overflow:hidden;
+          position: relative;
+        }
+        .slidable{
+          transform: translate3d(0px,0px,0px);
+          transition:transform, 1s, ease-in-out;
+        }
+
+        .slidable:hover{
+          transform: translate3d(0px,-200px,0px);
+          transition: transform, 1s, ease-in-out;
+        }
+
+        .up , .down{
+          width:200px;
+          height:200px;
+          margin:0;
+          font-size: 120px;
+          text-align: center;
+          vertical-align: middle;
+        }
+        .up {
+          background-color: yellow;
+        }
+        .down{
+          background-color: blue;
+        }
+
+
+
+      </style>
+    </section>
+  </body>
+</html>
