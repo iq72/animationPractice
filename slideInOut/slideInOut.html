@@ -49,9 +49,30 @@
         .down{
           background-color: blue;
         }
-
-
-
+      </style>
+    </section>
+    <section>
+      <div class="container2">
+        <p >
+          <a href="#" class="slide-background">hover to slide background color</a>
+        </p>
+      </div>
+      <style media="screen">
+        .slide-background{
+          text-decoration:none;
+          background-image: linear-gradient(to right,
+                                            #ccff33,
+                                            #ccff33 50%,
+                                            transparent 50%,
+                                            transparent);
+          background-size: 200% 100%;
+          background-position: 100% 0;
+          transition:all, 10s, ease-in-out;
+        }
+        .slide-background:hover{
+          background-position: 0 0;
+          /*transition:all, 10s, ease-in-out;*/
+        }
       </style>
     </section>
   </body>
