@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>slides</title>
+  </head>
+  <body>
+    <section class="container">
+      <div class="sliders">
+        <div class="slider red"></div>
+        <div class="slider yellow"></div>
+        <div class="slider blue"></div>
+        <div class="slider green"></div>
+        <div class="slider brown"></div>
+        <div class="clear"></div>
+      </div>
+    </section>
+    <section>
+      <form class="slide-control" action="index.html" method="post">
+        <input type="radio" id="first" name="slides" value="0"><label class="dot selected" for="first"></label>
+        <input type="radio" id="sec" name="slides" value="1"><label class="dot" for="sec"></label>
+        <input type="radio" id="third" name="slides" value="2"><label class="dot" for="third"></label>
+        <input type="radio" id="forth" name="slides" value="3"><label class="dot" for="forth"></label>
+        <input type="radio" id="fifth" name="slides" value="4"><label class="dot" for="fifth"></label>
+      </form>
+    </section>
+    <style media="screen">
+      .container{
+        width: 100%;
+        height:400px;
+        overflow: hidden;
+        margin:0;
+        padding:0;
+      }
+      .sliders{
+        width: 500%;
+        padding: 0;
+        margin:0;
+        transition: transform 1s  ease-in-out;
+        transform: translate3d(0%, 0px, 0px);
+      }
+
+      .slider{
+        width:20%;
+        height:400px;
+        float: left;
+      }
+      .red{
+        background-color: red;
+      }
+      .yellow{
+        background-color: yellow;
+      }
+      .blue{
+        background-color: blue;
+      }
+      .green{
+        background-color: green;
+      }
+      .brown{
+        background-color: brown;
+      }
+      .clear{
+        clear: both;
+      }
+      .slide-control{
+        display: block;
+        margin: auto;
+        text-align: center;
+        /*margin-top:100px;*/
+        /*background-color: black;*/
+      }
+
+      input[type=radio]{
+        visibility: hidden;
+      }
+      .dot{
+        cursor:pointer;
+
+        margin:10px 5px;
+        display: inline-block;
+        width:10px;
+        height: 10px;
+        /*padding:3px;*/
+        background-color: rgba(0, 0, 0, 0.13);
+        /*border:solid 2px rgba(0, 0, 0, 0.27);*/
+        border-radius: 7px;
+      }
+      /*.dot:hover{
+        content:"";
+        display:block;
+        position: absolute;
+        margin: 2px;
+        width:6px;
+        height:6px;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.37);
+      }*/
+      .selected:after{
+        content:"";
+        display:block;
+        margin: 2px;
+        width:6px;
+        height:6px;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.37);
+      }
+
+    </style>
+<script src="./slides.js">
+
+</script>
+  </body>
+</html>
