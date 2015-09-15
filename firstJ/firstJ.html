@@ -25,14 +25,25 @@
     </section>
     <script type="text/javascript">
       var circle=document.querySelector('.circle');
-      var currentPos=0;
+      var currentPos=0,
+          angle=0,
+          increment=0.15;
       function move(){
         currentPos +=5;
+        angle+=increment;
+        var x = 5 * Math.cos(angle) + currentPos;
+        var y = 50 * Math.sin(angle) + 25;
+        console.log("positon: x=" + x + ", y= " + y);
         circle.style.transform="translate3d(" +
-                                currentPos + "px," +
-                                "0px, 0px)";
+                                x + "px," +
+                                y + "px, " +
+                                "0px)";
         if(Math.abs(currentPos)>=900){
           currentPos= -500;
+          increment = 0.05 + Math.random() / 2 ;
+        }
+        if(angle> 2 * Math.PI){
+          angle=0;
         }
         window.requestAnimationFrame(move);//on every frame , call function move();
       }
