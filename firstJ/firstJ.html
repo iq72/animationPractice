@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>firstJ</title>
+    <style media="screen">
+      .container{
+        background-color: grey;
+      }
+      .circle{
+        /*background-color: blue;*/
+        width: 150px;
+        height: 150px;
+        float: left;
+        border: solid 60px blue;
+        border-radius: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <div class="circle">
+
+      </div>
+    </section>
+    <script type="text/javascript">
+      var circle=document.querySelector('.circle');
+      var currentPos=0;
+      function move(){
+        currentPos +=5;
+        circle.style.transform="translate3d(" +
+                                currentPos + "px," +
+                                "0px, 0px)";
+        if(Math.abs(currentPos)>=900){
+          currentPos= -500;
+        }
+        window.requestAnimationFrame(move);//on every frame , call function move();
+      }
+      move();
+    </script>
+  </body>
+</html>
