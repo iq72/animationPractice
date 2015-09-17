@@ -2,9 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>pennersEasing</title>
+    <style media="screen">
+      .container{
+        position: relative;
+      }
+      .circle{
+        width:120px;
+        height:120px;
+        border-radius: 100%;
+        background-color: blue;
+        position: absolute;
+        top:30px;
+        lef:10px;
+      }
+    </style>
+    <script type="text/javascript" src=./easing.js>
+
+    </script>
   </head>
   <body>
+    <section class="container">
+      <div class="circle">
 
+      </div>
+      <script type="text/javascript">
+        var currentPos = 10,
+            iteration = 0,
+            changeValue = 0,
+            changeInValue=1001,
+            totalIterations=300,
+            originPos = 10;
+        var circle =document.querySelector('.circle');
+        function move(){
+
+          changeValue = easeInOutExpo(iteration, originPos, changeInValue, totalIterations);
+          currentPos = changeValue;
+          circle.style.left = currentPos + "px";
+          iteration++;
+          if(iteration >= totalIterations){
+            console.log("last position: " + currentPos);
+            currentPos = originPos;
+            iteration = 0;
+          }
+          window.requestAnimationFrame(move);
+        }
+        move();
+      </script>
+    </section>
   </body>
 </html>
